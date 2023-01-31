@@ -17,5 +17,26 @@ public class Main {
 
         Arrow fireArrow = new Arrow("Hellfire Arrow", "An ancient arrow forged from the ore that can only be found in the deepest depths of hell.", 100, 250, "fire");
         System.out.println(fireArrow.toStr6());
+
+        Ogre greenOgre = new Ogre("Ancient Green Ogre", 2000, 500, "Green");
+        System.out.println(greenOgre.toStr1());
+
+        Ogre redOgre = new Ogre("Mythical Berserk Red Ogre", 50000, 1000, "Red");
+        System.out.println(redOgre.toStr1());
+
+        Zombie slowZombie = new Zombie("Peak Expert Level Zombie", 250, 350, 50);
+        System.out.println(slowZombie.toStr2());
+
+        Zombie fastZombie = new Zombie("Swordmaster Level Zombie", 500, 750, 200);
+        System.out.println(fastZombie.toStr2());
+
+        Dog spotDog = new Dog("Medium-sized Spotted Dog", 50, 100, 75, 34);
+        System.out.println(spotDog.toStr3());
+
+        GiantSpider ancientSpider = new GiantSpider("1000-Year-Old Cave Spider", 5000, 175, 180);
+        System.out.println(ancientSpider.toStr4());
+
+        Dragon waterDragon = new Dragon("5000-Year-Old All-Seeing Water Dragon", 1000000, 250000, "water");
+        System.out.println(waterDragon.toStr5());
     }
 }
