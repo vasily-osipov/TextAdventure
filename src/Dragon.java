@@ -1,6 +1,6 @@
 public class Dragon extends Enemy{
-    private String elemental_attribute;
-    public Dragon(String name, int hp, int damage, String elemental_attribute){
+    private ElementalAttributes elemental_attribute;
+    public Dragon(String name, int hp, int damage, ElementalAttributes elemental_attribute){
         super(name, hp, damage);
         this.elemental_attribute = elemental_attribute;
     }

@@ -1,6 +1,6 @@
 public class Ogre extends Enemy{
-    private String color;
-    public Ogre(String name, int hp, int damage, String color){
+    private Colors color;
+    public Ogre(String name, int hp, int damage, Colors color){
         super(name, hp, damage);
         this.color = color;
     }
