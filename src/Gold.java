@@ -1,5 +1,10 @@
 public class Gold extends Item{
     private int amount;
+
+    public int getAmount() {
+        return amount;
+    }
+
     public Gold(int value, int amount) {
         super("Gold coin", String.format("A round coin with %s stamped on the front.", value), value);
         this.amount = amount;

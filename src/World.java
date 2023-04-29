@@ -26,7 +26,7 @@ public class World {
                 cols = rows.get(y).split("\t");
                 for(int x = 0; x < x_max; x++){
                     tile_name = cols[x];
-                    if(tile_name.equals("StartingRoom")){
+                    if(tile_name.equals("StartingArea")){
                         Starting_Position.x = y;
                         Starting_Position.y = x;
                     }
@@ -41,10 +41,50 @@ public class World {
     }
 
     public static MapTile tile_exists(int x, int y){
-        if( (x >= 0 && x <= 4) && (y >= 0 && y <= 4) ){
-            return null;
-        }else{
-            return new MapTile(x, y);
+        MapTile mt = null;
+        if( (x >= 0 && x < _world.length) && (y >= 0 && y < _world[0].length) && (_world[x][y] != null) ) {
+            switch (_world[x][y]) {
+                case "StartingArea":
+                    mt = new StartingArea(x, y);
+                    mt = checkAreaExists(mt);
+                    break;
+                case "FindSwordArea":
+                    mt = new FindSwordArea(x, y, new Sword("Iron Sword", "A well-made iron sword.", 25, 20, 10));
+                    mt = checkAreaExists(mt);
+                    break;
+                case "ThousandYearOldViperArea":
+                    mt = new ThousandYearOldViperArea(x, y, new ThousandYearOldViper("Ancient Poisonous Viper", 50,5,10));
+                    mt = checkAreaExists(mt);
+                    break;
+                case "TreasureArea":
+                    mt = new TreasureArea(x, y, new Gold(10,5));
+                    mt = checkAreaExists(mt);
+                    break;
+                case "EmptyPath":
+                    mt = new EmptyPath(x, y);
+                    break;
+                case "FindArrowArea":
+                    mt = new FindArrowArea(x, y, new Arrow("Arrow", "A well-made arrow with an iron arrowhead.", 7, 10, "physical"));
+                    mt = checkAreaExists(mt);
+                    break;
+                case "HostileMartialArtistArea":
+                    mt = new HostileMartialArtistArea(x, y, new HostileMartialArtist("Enraged Martial Artist", 100,20, Affiliations.Mount_Hua_Sect));
+                    mt = checkAreaExists(mt);
+                    break;
+                case "AscendToCelestialRealmArea":
+                    mt = new AscendToCelestialRealmArea(x, y);
+                    break;
+            }
         }
+        return mt;
+
+    }
+    private static MapTile checkAreaExists(MapTile mt) {
+        if (history.indexOf(mt) != -1) {
+            mt = history.get(history.indexOf(mt));
+        } else {
+            history.add(mt);
+        }
+        return mt;
     }
 }

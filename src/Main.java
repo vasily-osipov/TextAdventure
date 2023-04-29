@@ -1,5 +1,9 @@
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
+        /*
+
         Gold goldCoin = new Gold(1, 100);
         System.out.println(goldCoin.toStr());
 
@@ -38,5 +42,34 @@ public class Main {
 
         Dragon waterDragon = new Dragon("5000-Year-Old All-Seeing Water Dragon", 1000000, 250000, ElementalAttributes.water);
         System.out.println(waterDragon.toStr5());
+
+        MoveNorth moveNorth = new MoveNorth();
+        System.out.println(moveNorth.str());
+
+        MoveSouth moveSouth = new MoveSouth();
+        System.out.println(moveSouth.str());
+
+        MoveEast moveEast = new MoveEast();
+        System.out.println(moveEast.str());
+
+        MoveWest moveWest = new MoveWest();
+        System.out.println(moveWest.str());
+
+        ViewInventory viewInventory = new ViewInventory();
+        System.out.println(viewInventory.str());
+
+        Flee flee = new Flee();
+        System.out.println(flee.str());
+
+        Attack attack = new Attack();
+        System.out.println(attack.str());
+
+        World world = new World();
+        world.load_tiles();
+
+        MapTile test = new MapTile(0,0);
+        test.adjacent_moves();
+
+        */
     }
 }
